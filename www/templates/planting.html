@@ -1,0 +1,41 @@
+<ion-header-bar>
+  <div class="bar bar-header bar-balanced">
+    <button type="button" class="button button-clear changecolor-05" ng-click="$ionicGoBack()">
+      <i class="icon icon ion-android-arrow-back"></i>
+    </button>
+    <div class="col text-center">
+      <p>
+        <strong>GreenNotify</strong>
+      </p>
+    </div>
+    <button class="button button-icon icon ion-ios-search-strong" ng-click="vm.showFilterBar()"></button>
+  </div>
+</ion-header-bar>
+
+
+<ion-floating-menu has-footer="true" menu-color="" menu-icon="ion-plus" iconColor="green" menu-open-color="green">
+  <ion-floating-item menu-color="green" menu-open-color="green" icon="ion-camera" click="myEvent()"></ion-floating-item>
+  <ion-floating-item menu-color="green" menu-open-color="green" icon="ion-person" click="myEvent()"></ion-floating-item>
+</ion-floating-menu>
+
+<ion-content class="has-header">
+  <ion-content class="has-header">
+    <div class="list" ng-repeat="dataPlants in vm.plantingList">
+      <a class="item item-thumbnail" ui-sref="eventInfo" ng-if="dataPlants.key == 1" ng-click="vm.setData(items)">
+        <div class="item item-body">
+          <img class="full-image" ng-src="{{dataPlants.activityPic}}">
+        </div>
+        <h2>{{dataPlants.location}}</h2>
+        <p>{{dataPlants.discription}}</p>
+        <div class="row">
+          <button type="button" ui-sref="cardInfo" class="button button-full button-balanced">Donate: {{items.donation}}</button>
+        </div>
+      </a>
+
+    </div>
+  </ion-content>
+</ion-content>
+
+<ion-footer-bar class="bar-balanced changefooter555">
+  <button class="button button-large setbutton45566" ui-sref="registerEvent">Create Event</button>
+</ion-footer-bar>

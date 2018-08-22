@@ -1,0 +1,31 @@
+<ion-header-bar>
+  <div class="bar bar-header bar-balanced">
+    <button type="button" class="button button-clear changecolor-05" ng-click="$ionicGoBack()"><i class = "icon icon ion-android-arrow-back"></i></button>
+    <div class="col text-center">
+      <p><strong>GreenNotify</strong></p>
+    </div>
+
+  </div>
+</ion-header-bar>
+<form name="donationForm" ng-submit="vm.registerUserData()">
+
+<ion-content class="has-header">
+  <br><br>
+<br>
+      <label class="item item-input changebordercolor-01 changemarign-03">
+        Amount : <input type="text" placeholder=" 200" name="rupees" required>
+      </label>
+
+     <button  class="button button-block button-positive" 
+                    stripe-checkout="doCheckout"
+                    data-key="pk_test_DzFi3DiORqdtFixQpeLMdawi"
+                    data-name="Card Details"
+                    data-description=""
+                    data-amount="" 
+                    data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+                    data-allow-remember-me="false" 
+                    data-email="{{data.email}}" 
+                    data-locale="auto" 
+                    data-panel-label="Authorize" required> <i class="fa fa-credit-card-alt" aria-hidden="true"></i> &nbsp; Checkout To Donate
+                </button> 
+</ion-content>

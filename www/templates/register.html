@@ -1,0 +1,96 @@
+<div class="bar bar-header">
+  <button ui-sref="login" class="button button-icon icon ion-chevron-left">&nbsp;&nbsp;Back</button>
+</div>
+
+<form name="registerForm" ng-submit="vm.registerUserData()">
+  <ion-content class="margin-02">
+
+    <div class="textcenter">
+      <div>
+        <img class="imageset" ng-show="vm.profilePic" ng-src="{{ vm.profilePic}}" alt="No Image">
+         <img class="imgwidth-01" ng-show="!vm.profilePic" src="img/bill.png">
+      </div>
+      <button class="button button-outline button-positive button-small buttonset-01" ng-click="vm.imageUpload()">
+        Upload Image
+      </button>
+    </div>
+    <div class="list list-inset">
+      <label class="item item-input changebordercolor-01 changemarign-03">
+        <input type="text" placeholder="First Name" name="firstName" ng-model="vm.registerData.firstName"  ng-minlength="5" ng-maxlength="12" required>
+      </label>
+
+      <div class="help-block" ng-messages="registerForm.firstName.$error" ng-if="registerForm.firstName.$touched">
+        <p ng-message="minlength">* Your FirstName is too short.</p>
+        <p ng-message="maxlength">* Your FirstName is too long.</p>
+        <p ng-message="required"> * Your FirstName is required.</p>
+      </div>
+
+      <label class="item item-input changebordercolor-01 changemarign-03">
+        <input type="text" placeholder="Last Name" name="lastName" ng-model="vm.registerData.lastName"  ng-minlength="5" ng-maxlength="12" required>
+      </label>
+
+      <div class="help-block" ng-messages="registerForm.lastName.$error" ng-if="registerForm.lastName.$touched">
+        <p ng-message="minlength">* Your LastName is too short.</p>
+        <p ng-message="maxlength">* Your LastName is too long.</p>
+        <p ng-message="required"> * Your LastName is required.</p>
+      </div>
+
+
+      <label class="item item-input changebordercolor-01 changemarign-03">
+        <input type="email" placeholder="test@gmail.com" name="email" ng-model="vm.registerData.email" required>
+      </label>
+
+      <div class="help-block" ng-messages="registerForm.email.$error" ng-if="registerForm.email.$touched">
+        <p ng-message="required"> * Your Email is required.</p>
+        <p ng-message="email"> * Your Email is invalid</p>
+      </div>
+
+      <label class="item item-input item-select changebordercolor-01 changemarign-03">
+        <div class="input-label changecolor-04">Gender</div>
+        <select ng-model="vm.registerData.gender">
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+      </label>
+
+
+      <label class="item item-input changebordercolor-01 changemarign-03">
+        <input type="password" placeholder="Password" name="password" ng-model="vm.registerData.password"   ng-minlength="5" ng-maxlength="12" required>
+      </label>
+
+      <div class="help-block" ng-messages="registerForm.password.$error" ng-if="registerForm.password.$touched">
+        <p ng-message="minlength">* Your Password is too short.</p>
+        <p ng-message="maxlength">* Your Password is too long.</p>
+        <p ng-message="required"> * Your Password is required.</p>
+      </div>
+
+      <label class="item item-input changebordercolor-01 changemarign-03">
+        <input type="password" placeholder="Confirm Password" name="confirmPassword" ng-model="vm.registerData.passwordConf" ng-pattern="vm.registerData.password" required>
+      </label>
+
+      <div class="help-block" ng-messages="registerForm.confirmPassword.$error" ng-if="registerForm.confirmPassword.$touched">
+        <p ng-message="required"> * Your Password is required.</p>
+        <p ng-message="pattern"> * Password must match</p>
+
+      </div>
+
+      <label class="item item-input changebordercolor-01 changemarign-03">
+        <input type="number" placeholder="phoneNumber" name="phoneNumber" ng-model="vm.registerData.phoneNumber" required ng-maxlength="15"ng-minlength="9">
+      </label>
+
+      <div class="help-block" ng-messages="registerForm.phoneNumber.$error" ng-if="registerForm.phoneNumber.$touched">
+        <p ng-message="minlength">* Your phoneNumber is too short.</p>
+        <p ng-message="maxlength">* Your phoneNumber is too long.</p>
+        <p ng-message="required"> * Your phoneNumber is required.</p>
+
+      </div>
+    </div>
+
+
+  </ion-content>
+
+  <ion-footer-bar align-title="center" class="bar-balanced changebckgroundcolor-01">
+    <button type="submit" ng-disabled="registerForm.$invalid" class="button button-block button-royal buttonMargin-01 changebckgroundcolor-01 changebckgroundcolor-02"><span style="color:white">Confirm</span></button>
+    <a class="title changebckgroundcolor-02" type="submit"  ng-disabled="registerForm.$invalid"><span style="color:white">Confirm</span></a>
+  </ion-footer-bar>
+</form>

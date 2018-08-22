@@ -1,0 +1,63 @@
+<ion-header-bar>
+  <div class="bar bar-header bar-balanced">
+    <button type="button" class="button button-clear changecolor-05" ng-click="$ionicGoBack()">
+      <i class="icon icon ion-android-arrow-back"></i>
+    </button>
+    <div class="col text-center">
+      <p>
+        <strong>GreenNotify</strong>
+      </p>
+    </div>
+  </div>
+</ion-header-bar>
+<form name="registerEventForm" ng-submit="vm.registerEvent()">
+  <ion-content class="margin-02">
+    <div class="row" style="margin-left: -18px;">
+      <div class="col col-50 col-offset-10">
+        <button class="button button-outline button-positive button-small buttonset-01" ng-click="vm.imageUpload()">
+          Upload your Area Pics
+        </button>
+      </div>
+      <div class="col col-40">
+        <button class="button button-outline button-positive button-small buttonset-01" ng-click="vm.imageUpload()">
+          Upload for Main Image
+        </button>
+      </div>
+    </div>
+    <div class="list list-inset">
+      <label class="item item-input changebordercolor-01 changemarign-03">
+          <input type="text" placeholder="Name OF Event" name="Name"  ng-model="vm.registerEvents.name"  ng-minlength="5" ng-maxlength="12" required>
+      </label>
+
+      <div class="help-block" ng-messages="registerEventForm.Name.$error" ng-if="registerEventForm.Name.$touched">
+          <p ng-message="minlength">* Your Name is too short.</p>
+          <p ng-message="maxlength">* Your Name is too long.</p>
+          <p ng-message="required"> * Your Name is required.</p>
+      </div>
+
+      <label class="item item-input changebordercolor-01 changemarign-03">
+          <input type="text" placeholder="Description" name="discription" ng-model="vm.registerEvents.discription"  ng-minlength="5" ng-maxlength="100" required>
+      </label>
+
+      <div class="help-block" ng-messages="registerEventForm.discription.$error" ng-if="registerEventForm.discription.$touched">
+          <p ng-message="minlength">* Your Description is too short.</p>
+          <p ng-message="maxlength">* Your Description is too long.</p>
+          <p ng-message="required"> * Your Description is required.</p>
+      </div>
+    
+      <label class="item item-input changebordercolor-01 changemarign-03">
+          <input type="text" placeholder="location" name="location" ng-model="vm.registerEvents.location" required>
+      </label>
+
+      <div class="help-block" ng-messages="registerEventForm.location.$error" ng-if="registerEventForm.location.$touched">
+          <p ng-message="required"> * Your loaction is required.</p>
+          <p ng-message="email"> * Your location is invalid</p>
+      </div>
+    </div>
+  </ion-content>
+
+  <ion-footer-bar align-title="center" class="bar-balanced changebckgroundcolor-01">
+    <button type="submit" ng-disabled="registerEventForm.$invalid" class="button button-block button-royal buttonMargin-01 changebckgroundcolor-01 changebckgroundcolor-02">Confirm Events</button>
+  </ion-footer-bar>
+</form>
+

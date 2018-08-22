@@ -1,0 +1,48 @@
+<ion-nav-bar class="bar-royal">
+</ion-nav-bar>
+
+<!--<ion-floating-menu has-footer="true" menu-color="#886aea" menu-icon="ion-plus" iconColor="#fff" menu-open-color="#886aea">-->
+<!--<ion-floating-item menu-color="#886aea" menu-open-color="#886aea" icon="ion-camera" click="myEvent()"></ion-floating-item>-->
+<!--<ion-floating-item menu-color="#886aea" menu-open-color="#886aea" icon="ion-person" click="myEvent()"></ion-floating-item>-->
+<!--</ion-floating-menu>-->
+
+
+<ion-content class="has-header">
+
+  <ion-slide-box>
+    <ion-slide ng-repeat="images in vm.slideImages">
+      <img ng-src="{{images}}" style="width:100% !important; height:auto; margin:auto; display:block;">
+    </ion-slide>
+  </ion-slide-box>
+
+
+    <!--<div class="col col-80 col-offset-10">-->
+      <!--<p class="changecolor-60">Activites</p>-->
+    <!--</div>-->
+
+  <div class="changecolor-59">
+    <div class="row">
+      <div class="col col-30 col-offset-10 text-center">
+        <button ui-sref="cleaning" class="button button-large button-block button-balanced changecolor-57 changecolor-61">
+          Cleaning
+        </button>
+        <div class="col col-20">
+        </div>
+      </div>
+      <div class="col col-30 text-center">
+        <button ui-sref="planting" class="button button-large button-block button-balanced changecolor-57 changecolor-61">
+          Planting
+        </button>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col col-80 col-offset-10 text-center">
+        <button ui-sref="donation" class="button button-large button-block button-royal changecolor-62 changecolor-63">
+          Donate $1
+        </button>
+      </div>
+    </div>
+  </div>
+
+</ion-content>
